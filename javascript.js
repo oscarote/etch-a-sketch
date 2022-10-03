@@ -31,15 +31,25 @@ let color = "black";
 divItems.forEach(item => item.addEventListener("mouseover", () => item.style.backgroundColor = color));
 
 // Buttons
-const reset = document.getElementById("reset");
-const black = document.getElementById("black");
+const resetBtn = document.getElementById("resetBtn");
+const blackBtn = document.getElementById("blackBtn");
+const rgbBtn = document.getElementById("rgbBtn");
 
 
-reset.addEventListener("click", () => resetGrid());
-black.addEventListener("click", () => color = "black");
-
+resetBtn.addEventListener("click", () => resetGrid());
+blackBtn.addEventListener("click", () => color = "black");
+rgbBtn.addEventListener("click", () => {
+    divItems.forEach(item => item.addEventListener("mouseover", () => item.style.backgroundColor = randomRgbColor()));
+});
 
 
 function resetGrid() {
     divItems.forEach(item => item.style.backgroundColor = "white");
+}
+
+function randomRgbColor() {
+    const rgb_x = Math.floor(Math.random() * 256);
+    const rgb_y = Math.floor(Math.random() * 256);
+    const rgb_z = Math.floor(Math.random() * 256);
+    color = `rgb(${rgb_x}, ${rgb_y}, ${rgb_z})`;
 }
