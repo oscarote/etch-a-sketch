@@ -17,15 +17,17 @@
         <button id="resetBtn">RESET</button>
         <button id="blackBtn">BLACK</button>
         <button id="rgbBtn">RGB</button>
-        <div class="colorPrompt"></div>
-        <div class="pickColor"></div>
+        <input type="color" id="colorPicked">
+        <input type="range" min="2" max="100" value="16" class="slider" id="gridRange">
+        <output>16</output>
     </div>
 
     <div class="container" id="container">
     </div>
     
     <div class="footer">
-        Copyright © Oscarote 2022
+        Copyright © <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/oscarote" target="_blank">
+            Oscarote <img id="gh-logo" src="githublogo.png" alt="github logo"></a>
     </div>
 </body>
 </html>

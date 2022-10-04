@@ -24,6 +24,14 @@ body {
     color: #F9FAF8;
 }
 
+.buttons {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
 .footer {
     font-size: 18px;
     color: #E5E7EB;
@@ -33,18 +41,90 @@ body {
     justify-content: center;
 }
 
+#gh-logo {
+    width: 35px;
+    height: 35px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+/* Buttons */
+#resetBtn,
+#blackBtn,
+#rgbBtn,
+#colorPicked {
+    width: 10%;
+    font-size:16px;
+    background-color: white;
+    box-shadow: 5px 5px;
+    outline: none;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+button:active{
+    transform: scale(1.2);
+}
+
+output {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-right: 0;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
 /* GRID */
 
 .container {
     display: grid;
-    grid-template-columns: repeat(16, 50px);
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    width: 700px;
+    height: 700px;
 }
 
 .grid-item {
     background-color: white;
     text-align: center;
-    width: 50px;
-    height: 50px;
     border-top: 1px solid black;
     border-left: 1px solid black;
   }
@@ -56,3 +136,33 @@ body {
   .border-right {
     border-right: 1px solid black;
   }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+    .buttons,
+    .container {
+        width: 350px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        gap: 15px;
+    }
+    .container {
+        height: 350px;
+    }
+
+    #resetBtn,
+    #blackBtn,
+    #rgbBtn,
+    #colorPicked {
+        width: 30%;
+        font-size: 18px;
+        background-color: white;
+        box-shadow: 5px 5px;
+}
+}
